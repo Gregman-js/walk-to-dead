@@ -3,7 +3,7 @@ Walk-to-dead - 2D Game top view in Java
 
 Download
 --------------
-Dowload executable jar from: https://drive.google.com/open?id=1DSgDBU58JqCuZ2w_IglefKcoGqX7Kg-c
+Dowload executable jar from: https://github.com/Gregman-js/walk-to-dead/releases/download/v0.95/WalkToDead.jar
 
 Others
 --------------
