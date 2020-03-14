@@ -123,7 +123,7 @@ public class Player {
 		if(handler.getGame().getServer().running) {
 			String sp = handler.getGame().getServer().datasplitter;
 			handler.getGame().getServer().sendToAll(PacketType.ClearStuff, l + sp + x + sp + y + sp + uuid + sp + type.toString());
-		} else {
+		} else if(handler.getGame().getClient().running) {
 			String sp = handler.getGame().getServer().datasplitter;
 			handler.getGame().getClient().sendData(handler.getGame().getClient().pack(PacketType.ClearStuff, l + sp + x + sp + y + sp + uuid + sp + type.toString()));
 		}
@@ -134,7 +134,7 @@ public class Player {
 		if(handler.getGame().getServer().running) {
 			String sp = handler.getGame().getServer().datasplitter;
 			handler.getGame().getServer().sendToAll(PacketType.ClearStuff, l + sp + x + sp + y);
-		} else {
+		} else if(handler.getGame().getClient().running) {
 			String sp = handler.getGame().getServer().datasplitter;
 			handler.getGame().getClient().sendData(handler.getGame().getClient().pack(PacketType.ClearStuff, l + sp + x + sp + y));
 		}

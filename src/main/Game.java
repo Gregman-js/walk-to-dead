@@ -406,6 +406,10 @@ public class Game extends Canvas implements Runnable {
 			}
 		}
 	}
+	
+	public boolean isSinglePlayer() {
+		return !server.running && !client.running;
+	}
 
 
 }

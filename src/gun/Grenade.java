@@ -223,6 +223,37 @@ public boolean tick() {
 				}
 			}
 			boom = true;
+		} else if(handler.getGame().isSinglePlayer()) {
+			Point grenadeO = new Point((int)(posX + size/2),
+					(int)(posY + size/2));
+			for(Enemy enemy : handler.getEnemies()) {
+				if(!enemy.getDie()) {
+					Point enemyO = new Point((int)(enemy.getPosX() + enemy.getSize()/2),
+							(int)(enemy.getPosY() + enemy.getSize()/2));
+					
+					Point diff = new Point((int)Math.abs(grenadeO.x - enemyO.x), (int)Math.abs(grenadeO.y - enemyO.y));
+					
+					float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
+					System.out.println("1");
+					
+					if(dis < boomsize) {
+						enemy.decreasHeal(getDecHeal(boomsize, dis, decreasHeal));
+					}
+				}
+			}
+			if(handler.getPlayer().getHeal() > 0) {
+				Point playerO = new Point((int)(handler.getPlayer().getPosX() + handler.getPlayer().getSize()/2),
+						(int)(handler.getPlayer().getPosY() + handler.getPlayer().getSize()/2));
+				
+				Point diff = new Point((int)Math.abs(grenadeO.x - playerO.x), (int)Math.abs(grenadeO.y - playerO.y));
+				
+				float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
+				
+				if(dis < boomsize) {
+					System.out.println("3");
+					handler.getPlayer().decreaseHeal(getDecHeal(boomsize, dis, decreasHeal));
+				}
+			}
 		}
 		if(diegoes <= 0) {
 			diegoes = dieskips;
