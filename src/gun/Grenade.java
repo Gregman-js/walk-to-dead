@@ -186,7 +186,6 @@ public boolean tick() {
 					Point diff = new Point((int)Math.abs(grenadeO.x - enemyO.x), (int)Math.abs(grenadeO.y - enemyO.y));
 					
 					float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
-					System.out.println("1");
 					
 					if(dis < boomsize) {
 						enemy.decreasHeal(getDecHeal(boomsize, dis, decreasHeal));
@@ -203,7 +202,6 @@ public boolean tick() {
 					
 					float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
 					
-					System.out.println("2");
 					if(dis < boomsize) {
 						enemy.decreaseHeal(getDecHeal(boomsize, dis, decreasHeal));
 					}
@@ -218,7 +216,6 @@ public boolean tick() {
 				float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
 				
 				if(dis < boomsize) {
-					System.out.println("3");
 					handler.getPlayer().decreaseHeal(getDecHeal(boomsize, dis, decreasHeal));
 				}
 			}
@@ -234,7 +231,6 @@ public boolean tick() {
 					Point diff = new Point((int)Math.abs(grenadeO.x - enemyO.x), (int)Math.abs(grenadeO.y - enemyO.y));
 					
 					float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
-					System.out.println("1");
 					
 					if(dis < boomsize) {
 						enemy.decreasHeal(getDecHeal(boomsize, dis, decreasHeal));
@@ -250,7 +246,6 @@ public boolean tick() {
 				float dis = (float)Math.sqrt(Math.pow(diff.x, 2) + Math.pow(diff.y, 2));
 				
 				if(dis < boomsize) {
-					System.out.println("3");
 					handler.getPlayer().decreaseHeal(getDecHeal(boomsize, dis, decreasHeal));
 				}
 			}
